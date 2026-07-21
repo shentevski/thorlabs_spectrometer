@@ -1,0 +1,9 @@
+# Runtime dependency of the thorlabs_spectrometer package:
+numpy
+
+# Loads the Thorlabs .NET (net48) assemblies. Windows-only -- the marker keeps
+# this file usable on the Mac you edit from.
+pythonnet>=3.0; sys_platform == "win32"
+
+# Used by the example scripts (live plot / saved figure):
+matplotlib

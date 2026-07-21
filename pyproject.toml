@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thorlabs_spectrometer"
+version = "0.1.0"
+description = "Simple control for Thorlabs CCT-series compact spectrometers (CCT10), bundling the .NET SDK DLLs"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+    # pythonnet is what loads the .NET assemblies. It is only installable and
+    # only useful on Windows, so it is marked -- this keeps `pip install -e .`
+    # working on the Mac used for editing.
+    "pythonnet>=3.0; sys_platform == 'win32'",
+]
+
+[project.optional-dependencies]
+# Used by the example scripts (plotting).
+examples = ["matplotlib"]
+
+[tool.setuptools]
+# 'pyCCT' is the vendor SDK package that ships with the CCT software; it is
+# bundled here (with its net48 DLLs) so the repo is clone-and-run on Windows.
+packages = ["thorlabs_spectrometer", "pyCCT"]

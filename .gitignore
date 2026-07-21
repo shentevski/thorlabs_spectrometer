@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# Editors / OS / tooling
+.vscode/
+.idea/
+.claude/
+.DS_Store
+Thumbs.db
+
+# Example + acquisition output
+*.csv
+*.png
+cct_api_dump.txt
+
+# NOTE: the pyCCT/net48/ DLL folder is intentionally NOT ignored.
+# It is committed on purpose so a fresh Windows PC can clone-and-run.
